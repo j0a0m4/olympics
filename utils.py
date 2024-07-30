@@ -33,3 +33,9 @@ def load_dataframes(datasets: list[str]) -> dict[str, DataFrame]:
         df = load_parquet(dataset)
         storage[dataset] = df
     return storage
+
+
+def assert_equals(name, actual, expected):
+    print(f"🧪 {name}")
+    assert actual == expected, f"❌ should be {expected} but was {actual}"
+    print("✔️ Test Passed!")
